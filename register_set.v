@@ -1,7 +1,7 @@
 //5 bit register set with 4 registers
 `include "decoder_2x4.v"
 `include "register_5bit.v"
-`include "mux_4x1_5bit.v"
+// `include "mux_4x1_5bit.v"
 
 module register_set (
     input wire [1:0] Ra,
