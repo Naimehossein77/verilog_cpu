@@ -1,6 +1,5 @@
 `timescale 1ns/1ps
 `include "register_set.v"
-
 module register_set_tb;
     reg [1:0] Ra;
     reg [1:0] Rb;
@@ -10,7 +9,6 @@ module register_set_tb;
     reg clk;
     wire [4:0] a;
     wire [4:0] b;
-
     register_set uut(Ra,Rb,Wr,Wrd,reg_en,clk,a,b);
     always #10 clk = ~clk;
     initial

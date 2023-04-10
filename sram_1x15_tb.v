@@ -1,11 +1,9 @@
- `timescale 1ns/1ps
+`timescale 1ns/1ps
 `include "sram_1x15.v"
-
 module sram_1x15_tb;
     reg RS1,RS2,WS,clk;
     reg [14:0] WD;
     wire [14:0] RD1,RD2;
-
     sram_1x15 uut(RS1,RS2,WS,WD,clk,RD1,RD2);
     always begin
         #10;
@@ -19,8 +17,7 @@ module sram_1x15_tb;
         clk <= 1'b0;
         #20;
         WS <= 1'b1;
-        WD <= 15'b000000000000001;
-        
+        WD <= 15'b000000000000001;  
         #20;
         WS <= 1'b0;
         RS1 <= 1'b1;
@@ -29,7 +26,6 @@ module sram_1x15_tb;
         WD <= 15'b000000000000010;
         $finish;
     end
-    
     initial begin
         $dumpfile("sram_1x15.vcd");
         $dumpvars(0, sram_1x15_tb);

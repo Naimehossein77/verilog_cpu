@@ -9,7 +9,5 @@ always @(posedge clk) begin
     if(sel)
         _reg <= Din;
 end
-
-assign Dout = _reg;
-    
+assign Dout = _reg; 
 endmodule

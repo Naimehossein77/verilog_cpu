@@ -1,11 +1,9 @@
 `timescale 1ns/1ps
 `include "decoder_2x4.v"
-
 module decoder_2x4_tb;
     reg E;
     reg [1:0] A;
     wire [3:0] Y;
-
     decoder_2x4 uut(E,A,Y);
     initial begin
         E <= 1'b0;
@@ -19,11 +17,9 @@ module decoder_2x4_tb;
         A <= 2'b10;
         #20;
         A <= 2'b11;
-        #20;
-        
+        #20;      
         $finish;
-    end
-    
+    end 
     initial begin
         $dumpfile("decoder_2x4.vcd");
         $dumpvars(0, decoder_2x4_tb);

@@ -1,15 +1,11 @@
 `timescale 1ns/1ps
 `include "control_unit.v"
-
 module control_unit_tb;
     reg [3:0] opcode;
     reg cf,sf,zf;
     wire [1:0] op;
     wire imm_sel,reg_en,jmp_sel;
-    
-
     control_unit uut(opcode,cf,sf,zf,imm_sel,reg_en,op,jmp_sel);
-
     initial begin
         opcode <= 4'b0000;
         cf <= 1'b0;
@@ -36,7 +32,6 @@ module control_unit_tb;
         zf <= 1'b0;
         $finish;
     end
-    
     initial begin
         $dumpfile("control_unit.vcd");
         $dumpvars(0, control_unit_tb);

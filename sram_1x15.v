@@ -1,5 +1,4 @@
 `include "sram_1x1.v"
-
 module sram_1x15(
     input wire RS1,
     input wire RS2,
@@ -9,7 +8,6 @@ module sram_1x15(
     output wire [14:0] RD1,
     output wire [14:0] RD2
 );
-
 sram_1x1 sram0(WD[0],WS,RS1,RS2,clk,RD1[0],RD2[0]);
 sram_1x1 sram1(WD[1],WS,RS1,RS2,clk,RD1[1],RD2[1]);
 sram_1x1 sram2(WD[2],WS,RS1,RS2,clk,RD1[2],RD2[2]);
@@ -25,6 +23,4 @@ sram_1x1 sram11(WD[11],WS,RS1,RS2,clk,RD1[11],RD2[11]);
 sram_1x1 sram12(WD[12],WS,RS1,RS2,clk,RD1[12],RD2[12]);
 sram_1x1 sram13(WD[13],WS,RS1,RS2,clk,RD1[13],RD2[13]);
 sram_1x1 sram14(WD[14],WS,RS1,RS2,clk,RD1[14],RD2[14]);
-
-
 endmodule

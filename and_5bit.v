@@ -11,9 +11,7 @@ module and_5bit(
     assign z[2] = a[2] & b[2];
     assign z[3] = a[3] & b[3];
     assign z[4] = a[4] & b[4];
-
     assign cf = 1'b0;
     assign sf = z[4];
     assign zf = ~z[0] & ~z[1] & ~z[2] & ~z[3] & ~z[4];
-
 endmodule

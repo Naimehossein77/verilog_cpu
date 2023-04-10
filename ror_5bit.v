@@ -40,9 +40,6 @@ always @(*) begin
         _z[0] = a[4];
     end
 end
-
-
-
     assign z = _z;
     assign cf = 1'b0;
     assign sf = z[4];

@@ -2,7 +2,6 @@
 `include "decoder_2x4.v"
 `include "register_5bit.v"
 // `include "mux_4x1_5bit.v"
-
 module register_set (
     input wire [1:0] Ra,
     input wire [1:0] Rb,
@@ -22,5 +21,4 @@ module register_set (
     register_5bit reg3(Wrd,_reg_sel[3],clk,_R3);
     mux_4x1_5bit selected_a(_R0,_R1,_R2,_R3,Ra,a);
     mux_4x1_5bit selected_b(_R0,_R1,_R2,_R3,Rb,b);
-    
 endmodule

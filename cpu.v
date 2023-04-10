@@ -26,7 +26,6 @@ module cpu (
     
 );
 wire CPU_clk = 1'b0;
-
 assign CPU_clk = PC_en & clk;
 
 //CONTROL UNIT VARIABLES
@@ -49,18 +48,13 @@ wire [4:0] _R,_B_sub;
 wire cf,sf,zf,_cf,_sf,_zf;
 
 
-
 //PROGRAM COUNTER
 mux_2x1_3bit pc_mux(_O_adder,{_RD1[2],_RD1[1],_RD1[0]},_jmp_sel,_I);
 pc_3bit pc(_I,CPU_clk,_O);
 pc_adder_3bit pc_adder(_O,_O_adder);
 
-
-
-
 //RAM
 sram_7x15 sram(_O,RA2,WA,WD,WE,clk,_RD1,_RD2);
-
 
 //CONTROL UNIT
 control_unit cu({_RD1[14],_RD1[13],_RD1[12],_RD1[11]},_cf,sf_in,zf_in,_imm_sel,_reg_en,_op,_jmp_sel);
@@ -77,12 +71,10 @@ flag_register flag(cf,sf,zf,clk,_cf,_sf,_zf);
 
 assign RD2 = _RD2;
 assign Output = _R;
-
 assign cf_o = cf;
 assign jump_sel_o = _jmp_sel;
 assign ins_num = _O;
 assign cf_o = _cf;
 assign sf_o = _sf;
 assign zf_o = _zf;
-    
 endmodule

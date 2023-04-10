@@ -1,11 +1,9 @@
 `timescale 1ns/1ps
 `include "register_5bit.v"
-
 module register_5bit_tb;
     reg [4:0] Din;
     reg sel,clk;
     wire [4:0] Dout;
-
     register_5bit uut(Din,sel,clk,Dout);
     always begin
         #10;
@@ -24,7 +22,6 @@ module register_5bit_tb;
         #20;
         $finish;
     end
-    
     initial begin
         $dumpfile("register_5bit.vcd");
         $dumpvars(0, register_5bit_tb);
